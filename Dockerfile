@@ -1,4 +1,4 @@
-FROM node:11.10.0 as node
+FROM node:10.13.0 as node
 FROM ruby:2.7
 
 ENV ENTRYKIT_VERSION 0.4.0

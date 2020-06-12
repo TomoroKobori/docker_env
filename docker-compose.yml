@@ -2,14 +2,14 @@ version: "3.6"
 
 services:
   db:
-    image: mysql:8.0
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    image: mysql:5.7
+    command: mysqld
     environment:
       TZ: "Asia/Tokyo"
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: DB_NAME
-      MYSQL_USER: USER
-      MYSQL_PASSWORD: PASSWORD
+      MYSQL_DATABASE: app_development
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
     volumes:
       - ./docker/db/multibyte.cnf:/etc/mysql/conf.d/multibyte.cnf
     ports:
