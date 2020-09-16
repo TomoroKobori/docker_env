@@ -1,5 +1,5 @@
-FROM node:10.13.0 as node
-FROM ruby:2.7
+FROM node:12.18.3 as node
+FROM ruby:2.7.1
 
 ENV ENTRYKIT_VERSION 0.4.0
 
@@ -12,7 +12,7 @@ RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERS
     && chmod +x /bin/entrykit \
     && entrykit --symlink
 
-ENV YARN_VERSION 1.10.1
+ENV YARN_VERSION 1.22.4
 
 COPY --from=node /opt/yarn-v$YARN_VERSION /opt/yarn
 COPY --from=node /usr/local/bin/node /usr/local/bin/
